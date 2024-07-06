@@ -854,6 +854,8 @@ ActivateCommonContextMenu(HWND hwnd, HWND hwndLB, LPARAM lParam)
    POINT pt;
 
    HMENU hMenu = GetSubMenu(LoadMenu(hAppInstance, TEXT("CTXMENU")), 0);
+   // We don't want "open with" in tree and folder context menu
+   DeleteMenu(hMenu, IDM_OPENWITH, MF_BYCOMMAND);
 
    if (lParam == -1)
    {
@@ -898,6 +900,11 @@ ActivateCommonContextMenu(HWND hwnd, HWND hwndLB, LPARAM lParam)
             if (bDir)
             {
                EnableMenuItem(hMenu, IDM_EDIT, MF_BYCOMMAND | MF_DISABLED | MF_GRAYED);
+            }
+            else
+            {
+                // restore initial menu/add "open with" item for file context menu
+                hMenu = GetSubMenu(LoadMenu(hAppInstance, TEXT("CTXMENU")), 0);
             }
          }
       }
