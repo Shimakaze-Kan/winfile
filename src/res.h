@@ -622,3 +622,6 @@ JAPANEND
 #define IDS_KK_HARDLINKTOSTR            2007
 #define IDS_KK_SYMLINKFROMSTR           2008
 #define IDS_KK_SYMLINKTOSTR             2009
+
+// IDS_ from 8000 to 8999 reserved for my stuff
+#define IDM_OPENWITH					8000

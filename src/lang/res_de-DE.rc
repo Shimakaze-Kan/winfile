@@ -133,6 +133,7 @@ BEGIN
   BEGIN
   MENUITEM    "&Neues Fenster\tStrg+Umschalt Eingabetaste",       IDM_NEWWINDOW
   MENUITEM    "Öffnen\tEnter",                                    IDM_OPEN
+  MENUITEM    "Öffnen mit...",                                    IDM_OPENWITH
   MENUITEM    "Bearbeiten\tF12",                                  IDM_EDIT
   MENUITEM    "&Verschieben...\tF7",                              IDM_MOVE
   MENUITEM    "&Kopieren...\tF8",                                 IDM_COPY

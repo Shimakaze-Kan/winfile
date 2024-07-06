@@ -134,6 +134,7 @@ BEGIN
     BEGIN
     MENUITEM    "新建窗口(&N)\tCtrl+Shift Enter",     IDM_NEWWINDOW
     MENUITEM    "打开(&O)\tEnter",     IDM_OPEN
+    MENUITEM    "用...打开",           IDM_OPENWITH
     MENUITEM    "编辑\tF12",        IDM_EDIT
     MENUITEM    "移动(&M)...\tF7",     IDM_MOVE
     MENUITEM    "复制(&C)...\tF8",     IDM_COPY

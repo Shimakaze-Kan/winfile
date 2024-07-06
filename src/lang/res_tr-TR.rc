@@ -134,6 +134,7 @@ BEGIN
     BEGIN
     MENUITEM    "&Yeni Pencere \tCtrl+Shift Enter", IDM_NEWWINDOW
     MENUITEM    "&Aç\tEnter",                       IDM_OPEN
+    MENUITEM    "Şununla aç...",                    IDM_OPENWITH
     MENUITEM    "&Düzenle\tF12",                    IDM_EDIT
     MENUITEM    "&Taşı...\tF7",                     IDM_MOVE
     MENUITEM    "K&opyala...\tF8",                  IDM_COPY

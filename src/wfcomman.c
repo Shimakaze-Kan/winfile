@@ -621,7 +621,7 @@ CreateDirWindow(
 
 
 VOID
-OpenOrEditSelection(HWND hwndActive, BOOL fEdit)
+OpenOrEditSelection(HWND hwndActive, BOOL fEdit, BOOL fOpenWith)
 {
    LPTSTR p;
    BOOL bDir;
@@ -738,6 +738,20 @@ OpenOrEditSelection(HWND hwndActive, BOOL fEdit)
           else
              ret = ExecProgram(szNotepad, szPath, NULL, (GetKeyState(VK_SHIFT) < 0), FALSE);
 
+      }
+      else if (fOpenWith)
+      {
+          TCHAR szOpenWith[MAXPATHLEN];
+
+          // NOTE: assume system directory and "\\OpenWith.exe" never exceed MAXPATHLEN
+          if (GetSystemDirectory(szOpenWith, MAXPATHLEN) != 0)
+              lstrcat(szOpenWith, TEXT("\\OpenWith.exe"));
+          else
+              lstrcpy(szOpenWith, TEXT("OpenWith.exe"));
+
+          CheckEsc(szPath);     // add quotes if necessary; reserved space for them above
+
+          ret = ExecProgram(szOpenWith, szPath, NULL, (GetKeyState(VK_SHIFT) < 0), FALSE);
       }
       else
       {
@@ -983,14 +997,20 @@ AppCommandProc(DWORD id)
       {
          TypeAheadString('\0', NULL);
 
-         OpenOrEditSelection(hwndActive, FALSE);
+         OpenOrEditSelection(hwndActive, FALSE, FALSE);
       }
       break;
 
    case IDM_EDIT:
       TypeAheadString('\0', NULL);
 
-      OpenOrEditSelection(hwndActive, TRUE);
+      OpenOrEditSelection(hwndActive, TRUE, FALSE);
+      break;
+   
+   case IDM_OPENWITH:
+      TypeAheadString('\0', NULL);
+
+      OpenOrEditSelection(hwndActive, FALSE, TRUE);
       break;
       
    case IDM_ASSOCIATE:

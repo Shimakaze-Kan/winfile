@@ -135,6 +135,7 @@ BEGIN
     MENUITEM    "&Nova Janela\tCtrl+Shift Enter",     IDM_NEWWINDOW
     MENUITEM    "&Abrir\tEnter",     IDM_OPEN
     MENUITEM    "Editar\tF12",        IDM_EDIT
+    MENUITEM    "Abrir com...",     IDM_OPENWITH
     MENUITEM    "Mo&ver...\tF7",     IDM_MOVE
     MENUITEM    "&Copiar...\tF8",     IDM_COPY
     MENUITEM    "S&ymlink...\tF11", IDM_SYMLINK

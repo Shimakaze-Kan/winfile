@@ -134,6 +134,7 @@ BEGIN
     BEGIN
     MENUITEM    "&חלון חדש\tCtrl+Shift Enter",     IDM_NEWWINDOW
     MENUITEM    "&פתח\tEnter",     IDM_OPEN
+    MENUITEM    "פתח באמצעות",      IDM_OPENWITH
     MENUITEM    "ערוך\tF12",        IDM_EDIT
     MENUITEM    "העברה...\tF7",     IDM_MOVE
     MENUITEM    "ה&עתקה...\tF8",     IDM_COPY

@@ -134,6 +134,7 @@ BEGIN
     BEGIN
     MENUITEM    "&Nowe okno\tCtrl+Shift Enter",   IDM_NEWWINDOW
     MENUITEM    "&Otwórz\tEnter",                 IDM_OPEN
+    MENUITEM    "Otwórz za pomocą...",            IDM_OPENWITH
     MENUITEM    "Edytuj\tF12",                    IDM_EDIT
     MENUITEM    "&Przenieś...\tF7",               IDM_MOVE
     MENUITEM    "Kop&iuj...\tF8",                 IDM_COPY

@@ -135,6 +135,7 @@ BEGIN
     MENUITEM    "新しいウィンドウ(&N)\tCtrl+Shift Enter",     IDM_NEWWINDOW
     MENUITEM    "開く(&O)\tEnter",     IDM_OPEN
     MENUITEM    "編集\tF12",        IDM_EDIT
+    MENUITEM    "開く方法...",          IDM_OPENWITH
     MENUITEM    "移動(&M)...\tF7",     IDM_MOVE
     MENUITEM    "コピー(&C)...\tF8",     IDM_COPY
     MENUITEM    "シンボリックリンク(&Y)...\tF11",       IDM_SYMLINK
