@@ -741,17 +741,16 @@ OpenOrEditSelection(HWND hwndActive, BOOL fEdit, BOOL fOpenWith)
       }
       else if (fOpenWith)
       {
-          TCHAR szOpenWith[MAXPATHLEN];
+          WCHAR command[MAX_PATH + 50] = L"shell32.dll,OpenAs_RunDLL ";
+          wcscat_s(command, sizeof(command) / sizeof(command[0]), szPath);
 
-          // NOTE: assume system directory and "\\OpenWith.exe" never exceed MAXPATHLEN
-          if (GetSystemDirectory(szOpenWith, MAXPATHLEN) != 0)
-              lstrcat(szOpenWith, TEXT("\\OpenWith.exe"));
-          else
-              lstrcpy(szOpenWith, TEXT("OpenWith.exe"));
+          HINSTANCE hInst = ShellExecute(NULL, L"open", L"rundll32.exe", command, NULL, SW_SHOWNORMAL);
 
-          CheckEsc(szPath);     // add quotes if necessary; reserved space for them above
-
-          ret = ExecProgram(szOpenWith, szPath, NULL, (GetKeyState(VK_SHIFT) < 0), FALSE);
+          ret = 0;
+          if ((int)hInst <= 32) 
+          {
+              ret = 1;
+          }
       }
       else
       {
